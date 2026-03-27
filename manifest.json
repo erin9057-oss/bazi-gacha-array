@@ -1,0 +1,11 @@
+{
+    "display_name": "八字玄学求欧气阵法",
+    "loading_order": 9,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "PlusXii",
+    "version": "1.0.1",
+    "homePage": "https://github.com/your-repo/bazi-gacha-array"
+}

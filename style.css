@@ -1,0 +1,98 @@
+/* 强制阻止酒馆的 box-sizing 干扰 */
+#bazi_modal_container * {
+    box-sizing: border-box;
+}
+
+/* 样式隔离罩：融合酒馆主题，加入纯色保底，防止背景过度透明看不清 */
+.bazi-modal-wrapper { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    /* 使用酒馆主背景色，自带透明度保底（如未定义则回退深灰） */
+    background-color: var(--SmartThemeBackgroundColor, #1e1e1e); 
+    color: var(--SmartThemeBodyColor, #eee);
+    text-align: left;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+
+.bazi-modal-wrapper .section-title {
+    border-bottom: 2px solid #d4af37;
+    color: #d4af37; /* 改为鎏金色，适配酒馆常见的暗黑主题 */
+    padding-bottom: 5px;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.bazi-modal-wrapper .input-group { margin-bottom: 15px; }
+.bazi-modal-wrapper label { font-weight: bold; font-size: 14px; display: block; margin-bottom: 5px; }
+
+/* 强制输入框使用酒馆的半透明输入框底色，保底为半透明黑 */
+.bazi-modal-wrapper input[type="text"], 
+.bazi-modal-wrapper input[type="password"], 
+.bazi-modal-wrapper input[type="date"], 
+.bazi-modal-wrapper select, 
+.bazi-modal-wrapper textarea { 
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid var(--SmartThemeQuoteColor, #555); 
+    border-radius: 6px; 
+    font-family: inherit;
+    font-size: 14px;
+    background-color: var(--SmartThemeBlurTintColor, rgba(0,0,0,0.4)) !important;
+    color: var(--SmartThemeBodyColor, #fff) !important;
+}
+
+/* 级联菜单布局 */
+.bazi-modal-wrapper .location-group { display: flex; gap: 10px; flex-wrap: wrap; }
+.bazi-modal-wrapper .location-group select { flex: 1; min-width: 30%; }
+.bazi-modal-wrapper .location-group input { flex: 1; min-width: 60%; display: none; } 
+.bazi-modal-wrapper .flex-input { display: flex; gap: 10px; }
+.bazi-modal-wrapper .flex-input > div { flex: 1; }
+
+/* 提交按钮：保持玄学专属的鎏金配色 */
+.bazi-modal-wrapper .bazi-submit-btn {
+    background-color: #d4af37 !important; 
+    color: #fff !important;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+}
+.bazi-modal-wrapper .bazi-submit-btn:hover { background-color: #c5a017 !important; }
+.bazi-modal-wrapper .bazi-submit-btn:disabled { background-color: #777 !important; color: #aaa !important; cursor: not-allowed; }
+
+/* 输出框布局与保底色 */
+.bazi-modal-wrapper .output-container { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 30px; }
+.bazi-modal-wrapper .box { 
+    flex: 1; min-width: 250px; 
+    border: 1px solid var(--SmartThemeQuoteColor, #444); 
+    padding: 20px; border-radius: 8px; 
+    background: var(--SmartThemeBlurTintColor, rgba(0,0,0,0.2)); 
+}
+.bazi-modal-wrapper .box strong.box-title { 
+    display: block; margin-bottom: 10px; color: #d4af37; border-bottom: 1px dashed var(--SmartThemeQuoteColor, #666); padding-bottom: 5px; font-size: 16px; 
+}
+
+/* --- Markdown 渲染的原版美化样式（微调适应暗色系） --- */
+.bazi-modal-wrapper .content-area { font-size: 14.5px; line-height: 1.7; word-break: break-all; }
+.bazi-modal-wrapper .content-area h1, .bazi-modal-wrapper .content-area h2, .bazi-modal-wrapper .content-area h3 {
+    color: #d4af37; font-size: 16px; margin: 15px 0 8px 0; border-bottom: 1px dashed var(--SmartThemeQuoteColor, #555); padding-bottom: 4px; 
+}
+.bazi-modal-wrapper .content-area p { margin: 8px 0; }
+.bazi-modal-wrapper .content-area ul, .bazi-modal-wrapper .content-area ol { margin: 8px 0; padding-left: 20px; }
+.bazi-modal-wrapper .content-area li { margin-bottom: 5px; }
+/* 重点内容加粗，采用低饱和金底黄字，护眼且清晰 */
+.bazi-modal-wrapper .content-area strong { color: #ffd700; background: rgba(212, 175, 55, 0.2); padding: 2px 4px; border-radius: 3px; font-weight: bold; }
+.bazi-modal-wrapper .content-area em { opacity: 0.8; font-style: italic; }
+.bazi-modal-wrapper .content-area blockquote {
+    border-left: 4px solid #d4af37; margin: 10px 0; padding-left: 10px; background: var(--SmartThemeBlurTintColor, rgba(255,255,255,0.05));
+}
+
+.bazi-modal-wrapper .api-config { background: var(--SmartThemeBlurTintColor, rgba(0,0,0,0.2)); padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 13px; }
+.bazi-modal-wrapper .api-config label { font-size: 13px; }
+.bazi-modal-wrapper .notice { font-size: 12px; background: rgba(212, 175, 55, 0.1); padding: 10px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #d4af37; color: var(--SmartThemeBodyColor); }
