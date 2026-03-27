@@ -8,7 +8,7 @@ if (typeof marked === 'undefined') {
 }
 
 let pcaData = {};
-const SPECIAL_PROVS = ["香港特别行政区", "澳门特别行政区", "台湾省"];
+const SPECIAL_PROVS = ["香港特别行政区", "澳门特别行政区", "台湾"];
 const OTHER_KEY = "海外及其他地区";
 
 const GameDatabase = [
