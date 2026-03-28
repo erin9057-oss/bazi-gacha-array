@@ -3,7 +3,7 @@
         
         <div id="bazi_modal_close" style="position:absolute; top:15px; right:20px; cursor:pointer; font-size:24px; color:var(--SmartThemeBodyColor, #fff); z-index: 10; opacity: 0.8;">✖</div>
         
-        <h2 style="text-align: center; color: #d4af37; margin-top: 0;">🔮 八字玄学求欧气阵法生成器</h2>
+        <h2 style="text-align: center; color: #d4af37; margin-top: 0;">🔮 八字+六爻求欧气排盘系统</h2>
         <div class="notice">
             🔒 <strong>隐私安全提示：</strong> 本页面为前端本地运行。API 密钥及命主生辰八字仅保留在设备本地，直接与测算接口沟通，绝无外泄可能。
         </div>
@@ -35,6 +35,81 @@
                         <option value="gpt-5.4">gpt-5.4</option>
                     </select>
                 </div>
+            </div>
+        </details>
+
+        <h3 class="section-title">📜 命主基本信息 (先天八字之体)</h3>
+        <div class="flex-input input-group">
+            <div>
+                <label>性别</label>
+                <select id="bazi_gender"><option value="女">女</option><option value="男">男</option></select>
+            </div>
+            <div>
+                <label>阳历生日</label>
+                <input type="date" id="bazi_birthday">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>出生时间 (留空则默认任选当天吉时)</label>
+            <input type="text" id="bazi_birthTime" placeholder="例如: 早上8点半, 辰时">
+        </div>
+
+        <div class="input-group">
+            <label>出生地 <span id="bazi_birth-loading" style="font-size: 12px; color: #d4af37;">(加载中...)</span></label>
+            <div class="location-group" id="bazi_birth-group">
+                <select class="prov"><option value="">请选择省份</option></select>
+                <select class="city"><option value="">请选择城市</option></select>
+                <select class="dist"><option value="">请选择区县</option></select>
+                <input type="text" class="other" placeholder="请输入海外国家或详细地址">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>现居住地</label>
+            <div class="location-group" id="bazi_live-group">
+                <select class="prov"><option value="">请选择省份</option></select>
+                <select class="city"><option value="">请选择城市</option></select>
+                <select class="dist"><option value="">请选择区县</option></select>
+                <input type="text" class="other" placeholder="请输入海外国家或详细地址">
+            </div>
+        </div>
+
+        <h3 class="section-title">✨ 所求何事</h3>
+        <div class="input-group">
+            <label>想要许什么愿望？(越具体越好如游戏名，主角名)</label>
+            <textarea id="bazi_wish" rows="2" placeholder="例如：明天中午玩某某游戏抽卡出限定角色，或者拆盲盒/吧唧出隐藏款"></textarea>
+        </div>
+
+        <h3 class="section-title">☯️ 六爻金钱课 (细节决定成败)</h3>
+        <div class="input-group">
+            <label style="color: #aaa; font-size: 13px;">请先在上方填写愿望，心中默念所求之事，然后点击起卦 (无事不占，不动不占)。</label>
+            <button id="bazi_castBtn" class="bazi-cast-btn">🪙 抛掷三枚铜钱起卦 (自动6次)</button>
+            <div id="bazi_hexagram-display" class="hexagram-container">
+                <div class="hexagram-result-title" id="bazi_hexagram-title">本卦：XXX  |  变卦：XXX</div>
+                <div id="bazi_hexagram-lines-box"></div>
+            </div>
+            <input type="hidden" id="bazi_liuyaoResultData">
+        </div>
+
+        <button id="bazi_sendBtn" class="bazi-submit-btn">🙏 结印排盘，生成专属欧气阵法</button>
+
+        <div class="output-container">
+            <div class="box" id="bazi_box-summary">
+                <strong class="box-title">🌟 极简阵法口诀</strong>
+                <div id="bazi_summary-content" class="content-area">等待大师起卦...</div>
+            </div>
+            <div class="box" id="bazi_box-hexagram">
+                <strong class="box-title">☯️ 卦象解析</strong>
+                <div id="bazi_hexagram-content" class="content-area">等待大师起卦...</div>
+            </div>
+            <div class="box" id="bazi_box-details">
+                <strong class="box-title">📜 八字+六爻详细阵法步骤</strong>
+                <div id="bazi_details-content" class="content-area">等待大师起卦...</div>
+            </div>
+        </div>
+    </div>
+</div>                </div>
             </div>
         </details>
 
