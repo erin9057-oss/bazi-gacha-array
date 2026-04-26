@@ -33,7 +33,7 @@
     
     /* 🌟 左侧用宣纸色填充缝隙 */
     background-color: #FEF8EC;
-    background-image: url('https://iili.io/B3aqU92.png'); /* 你的图床链接 */
+    background-image: url('https://iili.io/B31scZl.png'); /* 你的图床链接 */
     background-position: right center; /* 死死靠右对齐 */
     background-repeat: no-repeat;
     background-size: auto 100%; /* 高度占满不拉伸，宽度等比缩放 */
@@ -234,7 +234,7 @@
 
 /* 1. 中部背景：固定右上角，保持比例，自适应屏幕宽度但不超大 */
 #tab-real, #tab-rpg {
-    background-image: url('https://iili.io/B3c4I3v.png');
+    background-image: url('https://iili.io/B31sYuf.png');
     background-position: top right;
     background-repeat: no-repeat;
     background-size: min(65%, 400px) auto; 
@@ -242,7 +242,7 @@
 
 /* 2. 底部背景：固定左下角，保持比例，自适应屏幕宽度但不超大 */
 #tab-gua {
-    background-image: url('https://iili.io/B30F2DP.png');
+    background-image: url('https://iili.io/B31saj4.png');
     background-position: bottom left;
     background-repeat: no-repeat;
     background-size: min(65%, 400px) auto; 
